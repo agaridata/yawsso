@@ -11,9 +11,11 @@ Yet Another AWS SSO - sync up AWS CLI v2 SSO login session to legacy CLI v1 cred
 
 ## TL;DR
 
-- Install [latest from PyPI](https://pypi.org/project/yawsso/) like so:
+- Install from setup.py file like so:
 ```commandline
-pip install yawsso
+git clone https://github.com/agaridata/yawsso.git
+cd yawsso
+python setup.py install
 ```
 
 - Do your per normal SSO login and, have those SSO login session cache like so:
@@ -75,14 +77,6 @@ And, https://github.com/aws/aws-cli/issues/4982 in CLI repo itself!!
 This tool is originally based on [aws_sso.py](https://gist.github.com/sgtoj/af0ed637b1cc7e869b21a62ef56af5ac) script but take different approach and depends only on AWS CLI v2 for [get-role-credentials](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sso/get-role-credentials.html). Well, everything else fail (including boto3) except CLI itself, so...
 
 Someday, we won't need this anymore. But, until then this tool sync up AWS CLI v2 SSO login session to legacy format auto-magically!!
-
-## Others
-
-If this tools is not working for you, try the following:
-
-- https://github.com/benkehoe/aws-sso-credential-process
-- https://github.com/flyinprogrammer/aws-sso-fetcher
-- https://gist.github.com/sgtoj/af0ed637b1cc7e869b21a62ef56af5ac
 
 ## Develop
 
