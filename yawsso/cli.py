@@ -109,7 +109,7 @@ def fetch_credentials(profile_name, profile, aws_bin):
     except AssertionError as e:
         halt(e)
 
-    expires_utc = datetime.strptime((cached_login["expiresAt"]), "%Y-%m-%dT%H:%M:%SUTC")  # datetime format in sso cache
+    expires_utc = datetime.strptime((cached_login["expiresAt"]), "%Y-%m-%dT%H:%M:%SZ")  # datetime format in sso cache
 
     if datetime.utcnow() > expires_utc:
         halt(f"Current cached SSO login is expired since {expires_utc.astimezone().isoformat()}. Try login again.")
